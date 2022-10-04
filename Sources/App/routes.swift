@@ -7,6 +7,7 @@ func routes(_ app: Application) throws {
 
     app.post { req async in
         req.logger.info("\(req.body)")
+        return 200
     }
     
 }
