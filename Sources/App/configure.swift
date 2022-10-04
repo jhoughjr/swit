@@ -1,4 +1,5 @@
 import Vapor
+import NIOSSL
 
 // configures your application
 public func configure(_ app: Application) throws {
