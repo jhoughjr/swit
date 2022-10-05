@@ -9,12 +9,17 @@ let package = Package(
     dependencies: [
         // 💧 A server-side Swift web framework.
         .package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
+        .package(url: "https://github.com/apple/swift-nio-ssl.git", from: "2.8.0"),
+        .package(url: "https://github.com/kareman/SwiftShell", from: "5.1.0")
+
     ],
     targets: [
         .target(
             name: "App",
             dependencies: [
-                .product(name: "Vapor", package: "vapor")
+                .product(name: "Vapor", package: "vapor"),
+                .product(name: "NIOSSL", package: "swift-nio-ssl"),
+                .product(name: "SwiftShell", package:"SwiftShell")
             ],
             swiftSettings: [
                 // Enable better optimizations when building in Release configuration. Despite the use of
