@@ -18,13 +18,6 @@ func routes(_ app: Application) throws {
             req.logger.info("\(stdout.read())")
         }
 
-        // do something with ‘command’ while it is still running.
-        do {
-            let foo = try command.finish() // wait for it to finish.
-            req.logger.info("\(foo.stdout.read())")
-        }catch {
-            return .init(status:.internalServerError)
-        }
         return .init(status:.ok)
     }
     
